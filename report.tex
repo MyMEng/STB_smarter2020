@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[11pt, twocolumn]{article}
 
 % \usepackage{amsmath}
 % \usepackage{hyperref}
@@ -9,7 +9,7 @@
 % \usepackage{multirow} %in tables
 % \usepackage{caption} % in tables
 % \usepackage[usenames,dvipsnames]{color}
-\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage[scale=.75]{geometry} % top=1in, bottom=1in, left=1in, right=1in
 \usepackage{lipsum}
 
 \newcommand{\ts}{\textsuperscript}
@@ -17,7 +17,9 @@
 
 
 \begin{document}
-\vspace*{\fill}
+% \vspace*{\fill}
+
+\twocolumn[\begin{@twocolumnfalse}
 \begin{center}
     \begin{large}
     {\HRule \\[0.2cm]}
@@ -28,46 +30,177 @@
     \begin{minipage}{ 0.49\textwidth }
         \begin{flushleft}
             Kacper \textbf{Sokol}---\texttt{ks1591}---4GGK1\\
-            \today; University of Bristol, UK
+            \today
         \end{flushleft}
     \end{minipage}
     \begin{minipage}{ 0.49\textwidth }
         \begin{flushright}
             {Sustainability, Technology and Business\\
-             COMSM0006\\[0.3cm]}
+             COMSM0006; University of Bristol, UK\\[0.3cm]}
         \end{flushright}
     \end{minipage}
 \end{center}
+\vspace*{1em}\end{@twocolumnfalse}]
 
-\vspace*{3cm}
+% \vspace*{3cm}
 
-\begin{center}
-  \line(1,0){250}
-\end{center}
+% \begin{center}
+  % \line(1,0){250}
+% \end{center}
 
-\begin{abstract}
-  \lipsum[5]
-  \begin{center}
-    Keywords: \textbf{A, B, C}
-  \end{center}
-\end{abstract}
-\vspace*{\fill}
+% \begin{abstract}
+  % \lipsum[5]
+  % \begin{center}
+    % Keywords: \textbf{A, B, C}
+  % \end{center}
+% \end{abstract}
+% \vspace*{\fill}
 
-\thispagestyle{empty}
-\newpage
-\tableofcontents
+% \thispagestyle{empty}
+% \newpage
+% \tableofcontents
 
-\thispagestyle{empty}
-\newpage
-\setcounter{page}{1}
+% \thispagestyle{empty}
+% \newpage
+% \setcounter{page}{1}
+
+
+Uncertainty Analysis
+In particular we would like you to evaluate epistemic uncertainty that arises from assumptions applied to the modelling regarding\\
+- quality of the data used\\
+- model structure\\
+- obstacles and enabling factors that might affect the uptake of innovations (financial, technical, social)\\
+- implicit assumptions in system boundaries and methodology (for example rebound effect) In order to reduce this uncertainty we’d like you to:\\
+- reconstruct the estimates of the abatement potential in a tool\\
+- provide a critical analysis of the Smarter 2020 estimates in terms of the four types of uncertainty. This analysis should include identifying the data sources used in the SMARTer 2020 report.
+
+\line(1,0){100}
+
+Master Level Analysis
+If your team includes master level students we additionally would like to receive improved estimates for the abatement potential of at least 5 sublevers (or the creation of new sublevers) through
+- better data sources
+- a more detailed modelling structure\\
+
+Masters level students should also implement their improved abatement potential estimates in the tool.\\
+
+Typically 12 A4 pages, + tool
 
 \section{A}
-\lipsum[1]
+For each intervention, calculate the 'addressable emissions'. (eg total fuel expended on transportation).
+Estimate a savings potential for the technology based on;   Efficiency improvement estimate for the technology. stimate of the rollout of that technology by 2020.
+These figures found from the literature, and estimates by experts.
+
+\subsection{eCommerce}
+Total emissions from private transport estimated by the IEA to be 5.7GtCO2e in 2020 ->\\
+Estimate that 20\% of this is for shopping trips. (Found in Wall Street Journal blog on eCommerce.) ->\\
+Assume that 15\% of shopping is replaced by eCommerce in developed countries, and 0\% in developing. ->\\
+This gives 7.5\% actual abatement of shopping trips = 0.09 -> \\
+Ignore transportation emissions associated with eCommerce delivery.\\
+\subsection{Motor speed optimisation}
+Total emissions from electrical motors estimated to be 2.92 GtCO2e. ->\\
+Expert interviews for SMART2020 estimate that: variable speed control could increase efficiency by 30\%. \& this technology will penetrate 60\% of the market by 2020. ->\\
+Hence total reduction potential of 0.53 GtCO2e
+\subsection{Integration of Renewables}
+IEA scenario estimates that renewables could be responsible for 3.4 GtCO2e savings of emissions by 2020. ->\\
+Estimate (how? Unclear.) that 25\% credit for this is given to the role of ICT in integrating this technology into the power mix.
+
 \section{B}
-\lipsum[2]
-\section{C}
-\lipsum[3]
-\section{D}
-\lipsum[4]
+
+Analysis ignores direct impact of ICT for each solution (though the report does calculate the overall direct impact of ICT.)\\
+
+Analysis (mostly) ignores any rebound effects.\\
+
+This approach 'scoping' --- would not be anywhere near robust enough to assess and monetize the impacts. Very simplistic.\\
+
+IF ICT-enabled projects are to be truly assessed, then clear methodologies are needed for doing this. GeSI and the Carbon Trust are working on such methodologies.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Introduction}
+\begin{itemize}
+\global warming is society's main problem --- main contribution is GHG --- $CO_2$ is main part of GHG --- caused by burning fossil fuels ---
+
+\item decouple emission growth from economic growth
+
+\item introducing this may lead to additional jobs and money savings
+
+\item they claim total of $\mathbf{9.1} \mathbf{Gt}CO_2\mathbf{e}$ but it only sums up to $\mathbf{9} \mathbf{Gt}CO_2\mathbf{e}$ on the other hand figure shown \emph{Manufacturing: 1.3} but the text only 1.2. And again page 13 sais 1.2. WTF?
+
+\item after introducing ICT we do not take into account its influence on given sector; event thou it introduces additional source of GHG it gives an advantage over potential savings in GHG.
+
+\item the estimates are inacurate as new technologies are created constantly giving rise to new abatement posibillities
+
+\item focus on \emph{Power} end-use sector as it has lion's share
+\end{itemize}
+
+{\small
+Abbreviations:\\
+GHG --- Green House Gases\\
+ICT --- Information Communications Tecnology\\
+$CO_2e$ --- $CO_2$ equivalents\\
+BAU --- business as usual
+}
+
+\section{Levers reconstruction}
+\begin{itemize}
+\item focus on \emph{Power} end-use sector as it has lion's share
+
+\item can be divided into: \emph{integration of renewables}, and \emph{smart grid enabling}
+\item first: Demand management, Time-of-day pricing, Power-load balancing, Power grid optimization
+\item second: Integration of renewables in power generation, Virtual power plant, Integration of off-grid renewables and storage
+
+\item 
+\end{itemize}
+
+\subsection{Demand management}
+\subsubsection{Review}
+\subsubsection{Improvement}
+
+\subsection{Time-of-day pricing}
+\subsubsection{Review}
+\subsubsection{Improvement}
+
+\subsection{Power-load balancing}
+\subsubsection{Review}
+\subsubsection{Improvement}
+
+\subsection{Power grid optimization}
+\subsubsection{Review}
+\subsubsection{Improvement}
+
+\subsection{Integration of renewables in power generation}
+\subsubsection{Review}
+\subsubsection{Improvement}
+
+\subsection{Virtual power plant}
+\subsubsection{Review}
+\subsubsection{Improvement}
+
+\subsection{Integration of off-grid renewables and storage}
+\subsubsection{Review}
+\subsubsection{Improvement}
+
+\section{Conclusions}
+Based on the assessment of the abatement potential we then require from you an interpretation of the report for our department in which you summarise your analysis of the strengths and weaknesses of the SMARTer2020 report and identify possible conclusions and actions for policy making. Among other things our policy analysts are interested in areas where financial incentives to the uptake of innovations are lacking and where government intervention might be required.
+
+\section{Tool}
+Ipython julia with markup+latex\\
+Make sure, I can follow where assumptions came from
+
+\section{Summary}
 
 \end{document}

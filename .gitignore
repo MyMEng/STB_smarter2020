@@ -1,6 +1,11 @@
+# MAC OS X
+.DS_Store
+
 *.rtf
 *.pdf
 *.py
+*.png
+Tools/.ipynb_checkpoints/*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
