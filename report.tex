@@ -500,7 +500,14 @@ T\&D --- transmission and distribution
 \item they claim it has small potential due to number of diesel-generators and off-grid applications. DOES IT MEAN THAT THERE IS SMALL NUMBER OF OFF-GRID GENERATORS HENCE NO ROOM FOR IMPROVEMENT OR IT IS NOT POSSIBLE TO REPLACE THIS GENERATORS --- NOT CLEAR
 \item THE NAME SUGGEST THEY ARE MAINLY ON ISLAND --- IS IT DIFFICULT TO GIVE THEM A CABLE RO WHAT
 
+\item COUNTRY ANALYSIS
+\item despite being referenced to \citep{pieper2011revisiting} it does not contain the china off grid use of $78 MW$ of power capacity
+\item same thinking like above using tool we get: $0.02 MtCO_2e$ emission which is significantly different form presented value of $0.55 MtCO_2e$ or $0.5 MtCO_2e$ which is unconsistent as it sais 100\% reduction
+
+
+
 \item the USA
+\item we can do $0 Mt CO_2e$ --- irrelevant
 \item in USA potential of --- NOT RELEVANT!!!
 \item this sublever is not important in US due to widely available grid-connected electricity
 
@@ -513,9 +520,29 @@ T\&D --- transmission and distribution
 \item we can do $2 Mt CO_2e$
 \item called here \emph{Integration of storage into off-grid applications}
 \item niche applicaiton like powering cell phone towers currently powered by diesel generators and emiting today (2012) $6 MtCO_2$
+\item COUNTRY ANALYSIS
+\item despite being referenced to \citep{pieper2011revisiting} it does not contain the india off grid use of $290MW$
+\item same thinking like above using tool we get: $0.08 MtCO_2e$ / $0.09 MtCO_2e$ emission which is significantly different form presented value of $2.0 MtCO_2e$
+
+
+\item OVERALL ANALYSIS
+\item \citep{pieper2011revisiting} is referenced as a source of $600GW$ of diesel generators which is in turn referenced there to \emph{Powers System Research} website \url{http://www.powersys.com/}
+\item also \citep{pieper2011revisiting} say that ``running an average of only 5 percent of the time (that is, approximately 400 hours per year)'' WHICH IS NOT REFERENCED IN ANY WAY; FURTHERMORE 5\% IS 438 HOURS A YEAR
+\item power-sys seems to be selling power generators so maybe the study is based only on their power generators
+\item they release report called \emph{PowerTracker International} which reveiws developments and demand for all engine-powered generator sets across 12 major markets.
+\item the report is only available to subscriber hence source cannot be verified
+\item  This is the cumulated market for 1980 to 2010, representing an installed capacity of diesel generators with a nominal power of $500 kW$ or greater and assuming a 30-year generator lifetime. --- THIS STUDY DISREGARDS ALL GENERATORS BELOW $500 kW$ HENCE NOT COMPLETE
+\item this are only island generators how about backup and peak generators?
+\item this row of table breaks out of convention: in potential savings giving number of hours a year generators are used; in addressable emission giving overall poewr of fleet of installed diesels generators; and in abatement potential giving abatement potential
+\item it is not clear how the abatement ptential has been calated as there is missing conversion factor of emission per kWh produced 
+
+\item it is assumed here that whole off-grid generation can be replaced
 
 \end{itemize}
 \subsubsection{Improvement}
+\item to reconstruct the above calculations I found found in \citep{iea2012co2} that the energy generators fueled by diese give $0.69 kgCO_2$ per $1kWh$
+\item using the tool with the above data I can reconstruct it as: $0.17 GtCO_2e$ in case of 400 hours a year, and $0.18 GtCO_2e$ in case of 5\% of the year
+
 
 \section{Conclusions}
 Based on the assessment of the abatement potential we then require from you an interpretation of the report for our department in which you summarise your analysis of the strengths and weaknesses of the SMARTer2020 report and identify possible conclusions and actions for policy making. Among other things our policy analysts are interested in areas where financial incentives to the uptake of innovations are lacking and where government intervention might be required.\\
@@ -528,7 +555,9 @@ Different accuracy of estimates along the report: once one decimal place, on oth
 
 Majority of sublevers presented in power sector is highly dependant on advanced ICT-enabled smart grid infrastructure so if this fails all the rest is in danger of failing and furthermore there is potential overlay in sublevers\\
 
-\emph{Business case figures} --- how are they constructed not mentioned in report and how arre \emph{Overall business case callculated}
+\emph{Business case figures} --- how are they constructed not mentioned in report and how arre \emph{Overall business case callculated}\\
+
+Really poor references --- FUCKING POOR
 
 \section{Tool}
 Ipython julia with markup+latex\\
