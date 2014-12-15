@@ -1,0 +1,116 @@
+\documentclass[11pt, twocolumn]{article}
+\usepackage[scale=.87]{geometry}
+\usepackage{hyperref}
+\usepackage{cite} % BiTeX
+\usepackage[square]{natbib}
+\newcommand{\ts}{\textsuperscript}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+
+\twocolumn[\begin{@twocolumnfalse}
+\begin{center}
+    \begin{large}
+    {\HRule \\[0.2cm]}
+    \textsc{\Huge SMARTer 2020 review}
+    {\HRule \\[0.3cm]}
+    \end{large}
+
+    \begin{minipage}{ 0.49\textwidth }
+        \begin{flushleft}
+            Kacper \textbf{Sokol}---\texttt{ks1591}---4GGK1\\
+            \today
+        \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{ 0.49\textwidth }
+        \begin{flushright}
+            {Sustainability, Technology and Business\\
+             COMSM0006; University of Bristol, UK\\[0.3cm]}
+        \end{flushright}
+    \end{minipage}
+\end{center}
+\vspace*{1em}\end{@twocolumnfalse}]
+
+{\small
+\noindent Abbreviations used
+\begin{description}
+\item[ICT] Information Communications Technology
+\item[GHG] Green House Gases
+\item[$\mathbf{CO_2e}$] $CO_2$ equivalents
+\item[BAU] Business as Usual
+\item[T\&D] Transmission and Distribution
+\end{description}}
+
+\section{Introduction}
+World's economy is developing in incredible pace, improving our everyday life. Despite all the advancements in technology, especially in ICT, the \emph{global warming} problem mainly caused by release of GHG (with major contribution of $CO_2$) caused by burning fossil fuels, has not be paid to much attention. It should be our goal to decouple economic and emission growth and leading towards sustainable economy.\\
+ICT enabled technologies can be used to reduce emission from sectors like: power generation, transportation, manufacturing, service \& consumer, agriculture \& land use, and buildings. The main advantage of such approach is low emission footprint from used technologies yielding positive emission balance. Furthermore, implementing these technologies leads to additional job openings and significant financial savings in long term.\\
+It is relatively hard to produce accurate estimates as new technologies are constantly created giving rise to new abatement potentials.\\
+This review is focusing on \emph{Power} end-use sector as it's major part of proposed in \citep{global2012smarter} reduction and is underlying all other sectors.
+
+\section{Levers reconstruction}
+The \emph{Power} end-use sector can be divided as shown in \emph{Table}~\ref{tab:powersublevers}. Its overall addressable emission is the highest out of all sectors summing up to: $\mathbf{2.02} \mathbf{Gt}CO_2\mathbf{e}$. Four countries contributing almost half of this abatement are: \emph{China}, \emph{United States}, Germany, and India; with respective amounts of: $\mathbf{0.390} \mathbf{Gt}CO_2\mathbf{e}$, $\mathbf{0.350} \mathbf{Gt}CO_2\mathbf{e}$, $\mathbf{0.040} \mathbf{Gt}CO_2\mathbf{e}$, and $\mathbf{0.143} \mathbf{Gt}CO_2\mathbf{e}$ summing up to $\mathbf{0.923} \mathbf{Gt}CO_2\mathbf{e}$.
+
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{ p{.225\textwidth} | p{.225\textwidth} }%{ p{10.5em} | p{10.5em} }
+      Integration of renewables & Smart grid enabling \\
+      \hline
+      Demand management;\newline Time-of-day pricing;\newline Power-load balancing;\newline Power grid optimization & Integration of renewables in power generation;\newline Virtual power plant;\newline Integration of off-grid renewables and storage
+    \end{tabular}
+    \caption{Sublevers in \emph{Power} sector.\label{tab:powersublevers}}
+  \end{table}
+\end{center}
+
+Each of the sublevers can be described as follows:
+\begin{description}
+\item[Demand management] is a mechanism to manage electricity consumption in response to supply conditions, it is reducing non-base load electricity.
+
+\item[Time-of-day pricing] is variable electricity pricing mechanism for different times of the day; it allows customer to adjust they consumption and reduce overall demands during peak demands on the grid, it is reducing non-base load electricity.
+
+\item[Power-load balancing] are various techniques to store overhead of produced electricity during low demand and release it during peak hours, it is reducing non-base load electricity.
+
+\item[Power grid optimizations] reduce inefficiencies of transmission \& distribution and optimize infrastructure---e.g.\ detect power theft---with use of ICT (gathers and acts on information), it is reducing emission of power generation.
+
+\item[Integration of renewables in power generation] integrates the off-grid renewables and ensure more efficient use of them---e.g.\ by storing the overhead---with use of ICT, it is reducing emission of power generation.
+
+\item[Virtual power plant] are collectively run distributed generation installations---e.g.\ in the neighbourhood---managed by ICT infrastructure, it is reducing emission of power generation.
+
+\item[Integration of off-grid renewables and storage] integrates storage into off-grid power loads with ICT it is reducing emission form off-grid fossil fuel power generators.
+\end{description}
+
+
+
+\subsection{Demand management}
+\subsection{Time-of-day pricing}
+\subsection{Power-load balancing}
+\subsection{Power grid optimization}
+\subsection{Integration of renewables in power generation}
+\subsection{Virtual power plant}
+
+\subsection{Integration of off-grid renewables and storage}
+\subsubsection{}
+\subsubsection{}
+
+
+\section{Reconstruction tool}
+To reconstruct the abatement calculations and recalculate them with new sources I constructed interactive \texttt{Julia} tool with \texttt{IPython} interface.\\
+Both these technologies are used as they allow to alternate \texttt{MarkDown} and code. Please see \emph{Appendix}~\ref{app:julia} for tool overview.
+
+\section{Conclusions}
+The striking features of reviewed report are inconsistency, lack of high-detailed methodology explanations, poor referencing style.\\
+In the introduction the total abatement potential is presented as $\mathbf{9.1} \mathbf{Gt}CO_2\mathbf{e}$ but simple summation of numbers presented in one of tables gives $\mathbf{9} \mathbf{Gt}CO_2\mathbf{e}$. Furthermore \emph{Manufacturing} is presented to have $\mathbf{1.2} \mathbf{Gt}CO_2\mathbf{e}$ in text and $\mathbf{1.3} \mathbf{Gt}CO_2\mathbf{e}$ in figure. Majority of errors seems to be caused by rounding and different decimal accuracy in different places of the report.\\
+\emph{Business case assessment} figures lack explanation of sources used and methodology applied to arrive at \emph{overall business case} estimate. Major part of the report does not consider negative influence of applied ICT technology and emission of it while in use.\\
+It is relatively hard to find many of referred documents, and locate extracted data.\\
+
+The \emph{Power} sector shows vast inconsistency in sublever naming for different countries and as mentioned above different decimal point accuracy in different places of the report.\\
+Majority of sublevers presented in \emph{Power} sector is highly dependant on advanced ICT-enabled smart grid infrastructure, which only can be build with wide support of the government. If building it fails majority of abatement potential in \emph{Power} sector is in danger of failure. Furthermore, because of high dependence, on smart-grid there is potential overlay in abatement potential which is not addressed in the report and also clear boundaries between sublevers are not stated.\\
+Moreover, abatement potential is highly dependant on data collection and analysis. The first one is easy to achieve but the later requires data centres and tools to extract information relevant for emission reduction.\\
+Furthermore, people willingness to act upon smart meter readings and electricity price-variation is not considered in the report. Wealthy people may not care how much they pay or when they use electricity. It also requires some work to schedule one's task to fit into low and high tariffs which sometimes may be overwhelming.\\
+For businesses consumers both these factors might be irrelevant as they may not be able to shift business operating hours to off-peak periods and businesses operating 24/7 will not benefit from it.\\
+
+In most cases, high upfront cost of infrastructure upgrade is deterring factor. Without government subsidiaries, financing, or tax exempt it might be hard to introduce all the changes especially that majority of them has long return time.
+
+\bibliography{le}{}
+\bibliographystyle{plainnat}
+
+\end{document}
