@@ -11,6 +11,10 @@
 % \usepackage[usenames,dvipsnames]{color}
 \usepackage[scale=.75]{geometry} % top=1in, bottom=1in, left=1in, right=1in
 \usepackage{lipsum}
+\usepackage{hyperref}
+
+\usepackage{cite} % BiTeX
+\usepackage[square]{natbib}
 
 \newcommand{\ts}{\textsuperscript}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -400,7 +404,7 @@ T\&D --- transmission and distribution
 \item INDIA
 \item we can do $91.4 Mt CO_2e$
 \item using ICT technologies to detect and reduce massive T\&D losses (22\%)
-\item if transmission losses are reduced by $\fraction{1}{3}$ T\&D losses would still be high by international standards but would yield $91.4 MtCO_2e$ of abatement --- SO THE ASSUMPTION IS THAT THEY WILL BE IMPROVED TO REDUCE THE LOSSES BY THIRD PART
+\item if transmission losses are reduced by $\frac{1}{3}$ T\&D losses would still be high by international standards but would yield $91.4 MtCO_2e$ of abatement --- SO THE ASSUMPTION IS THAT THEY WILL BE IMPROVED TO REDUCE THE LOSSES BY THIRD PART
 \item ICT enabled grid would gather information on suppliers, consumers behaviour and grid inefficiencies to improfe overall efficiency
 \item information obtained from smart grid like state of power generators, transmitters, and distributos can be analysed to address areas where inefficiencies of T\&D inefficiencies arise
 \item the first suggested step is to deploy smart meters (easiest to apply) to identify where transmission losses occur and potential power theft
@@ -540,8 +544,9 @@ T\&D --- transmission and distribution
 
 \end{itemize}
 \subsubsection{Improvement}
-\item to reconstruct the above calculations I found found in \citep{iea2012co2} that the energy generators fueled by diese give $0.69 kgCO_2$ per $1kWh$
-\item using the tool with the above data I can reconstruct it as: $0.17 GtCO_2e$ in case of 400 hours a year, and $0.18 GtCO_2e$ in case of 5\% of the year
+to reconstruct the above calculations I found found in \citep{iea2012co2} that the energy generators fueled by diese give $0.69 kgCO_2$ per $1kWh$\\
+
+using the tool with the above data I can reconstruct it as: $0.17 GtCO_2e$ in case of 400 hours a year, and $0.18 GtCO_2e$ in case of 5\% of the year
 
 
 \section{Conclusions}
@@ -564,5 +569,8 @@ Ipython julia with markup+latex\\
 Make sure, I can follow where assumptions came from
 
 \section{Summary}
+
+\bibliography{le}{}
+\bibliographystyle{plainnat}
 
 \end{document}
