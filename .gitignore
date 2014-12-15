@@ -1,6 +1,9 @@
 # MAC OS X
 .DS_Store
 
+# Additional tools
+notebooks/*
+
 *.rtf
 *.pdf
 *.py
