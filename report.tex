@@ -107,6 +107,31 @@ Furthermore limited grid connectivity causes many phone towers.
 
 \section{Abatement potential and sublevers reconstruction}
 \subsection{Demand management}
+\subsubsection{Abatement potential review}
+The report estimates power capacity of the world at $6.9 TW$ (not referenced) but it does not specify when this capacity was reached or will be reached. Moreover the assumption of $\mathbf{0.55} \mathbf{kg}CO_2\mathbf{e} / kWh$ emission rate is also not referenced. The saving ratio of $65 Wh/W$ (demand response) used in the report can be easily found in~\citep{grid2008green}. Finally saving potential of 4\% is estimated based on ``penetration from case studies''\\
+
+The emission rate used in the calculation might be lower due to improvements and innovations introduced
+
+In China \emph{demand management} can save $\mathbf{4} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{4.2} \mathbf{Mt}CO_2\mathbf{e}$ according to table.
+
+
+\subsubsection{Sublever reconstruction\label{sec:dm:reconstruction}}
+According to~\citep{eia2011} the world power capacity was $5.331045 TW$ in 2011, and the closest estimate that I could find for 2020 is $5.8 TW$ read from the graph in~\ref{2002iba}.\\
+
+For the reconstruction $\mathbf{0.534 kg}CO_2\mathbf{e}/\mathbf{kWh}$ (\citep{iea2012co2})\\
+
+To calculate abatement potential we multiply $powerCapacity$ of selected country by $reductionRate$ to get addressable poewr reduction. Then we multiply this value by corresponding $emissionRate$ to get addressable emission; and finally, we multiply that by $savingPotential$ to get $abatementPotential$.
+
+
+\begin{gather*}
+  reducedCapacity = capacity * reductionRate\\
+  addressableEmission = reducedCapacity *\\
+  \quad\quad\quad\quad\quad emissionRate\\
+  abatementPotential = addressableEmission *\\
+  \quad\quad\quad\quad\quad savingPotential
+\end{gather*}
+
+
 \subsection{Time-of-day pricing}
 \subsection{Power-load balancing}
 \subsection{Power grid optimization}
@@ -123,6 +148,8 @@ India: T\&D loss is estimated to be 22\% and in some places reach 50\% - THE SOU
 
 \newpage
 \subsection{Integration of renewables in power generation}
+
+
 In China abatement potential in this sublever is $\mathbf{153} \mathbf{Mt}CO_2\mathbf{e}$ and can be achieved by investing and expanding renewable sources of energy. In the report use of carbon free energy is considered as one of major factors it lacks explanations and details on its use.\\
 This sublever has strong government support nevertheless its expansion is slowed down by missing ICT enabled smart grid that can efficiently use it. It is not explained how 
 
