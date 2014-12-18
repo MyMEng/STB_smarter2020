@@ -106,22 +106,30 @@ Furthermore limited grid connectivity causes many phone towers.
 
 
 \section{Abatement potential and sublevers reconstruction}
+
 \subsection{Demand management}
 \subsubsection{Abatement potential review}
-The report estimates power capacity of the world at $6.9 TW$ (not referenced) but it does not specify when this capacity was reached or will be reached. Moreover the assumption of $\mathbf{0.55} \mathbf{kg}CO_2\mathbf{e} / kWh$ emission rate is also not referenced. The saving ratio of $65 Wh/W$ (demand response) used in the report can be easily found in~\citep{grid2008green}. Finally saving potential of 4\% is estimated based on ``penetration from case studies''\\
+The report estimates power capacity of the world at $6.9 TW$ (not referenced) but it does not specify when this capacity was reached or will be reached. Moreover the assumption of $\mathbf{0.55} \mathbf{kg}CO_2\mathbf{e} / kWh$ emission rate is also not referenced. The saving ratio of $65 Wh/W$ (demand response) used in the report can be easily found in~\citep{grid2008green}. However, the referred paper notifies that data were collected for commercial buildings only and for the purpose of approximation they are used for residential buildings. Finally saving potential of 4\% is estimated based on ``penetration from case studies'' and is referenced to~\citep{grid2008green} which does not contain such figure. It can be easly spotted that references in the table are mixed.\\
+The emission rate used in the report to calculate abatement potential may be misleading, as due to power generation improvements over the years the emission factor should decrease causing lower overall abatement potential. Also some businesses may not be able to shave their energy use due to business characteristics leading to smaller abatement potential.\\
 
-The emission rate used in the calculation might be lower due to improvements and innovations introduced
+In China \emph{demand management} can save $\mathbf{4} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{4.2} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table. This sublever is highly dependant on government action such as issuing specific law as government involvement in power sector is significant. The aim in China is to reduce peak-load electricity which is also addressed in other sublevers leading to potential overlay with \emph{time-of-day pricing} and \emph{power load balancing}.\\
+The report assumes country specific power capacity of $2 TW$ in 2020 and emission factor of $\mathbf{0.8} \mathbf{kg}CO_2\mathbf{e} / kWh$ both referenced generically to \emph{IEA} leading to both figures being untraceable. The energy saving ratio and saving potential are the same as in worldwide calculations what may lead to inaccurate calculations as each country has different economic.\\
 
-In China \emph{demand management} can save $\mathbf{4} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{4.2} \mathbf{Mt}CO_2\mathbf{e}$ according to table.
+In the US this sublever can save $\mathbf{21} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{1.4} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table what is an obvious mistake. This sublever in US targets at reducing beak load electricity with help of: smart meters, smart-grid infrastructure, and changing customer behaviour. The first two indicate high dependence on smart-grid infrastructure which may not be ready at time and creates potential overlay. The last one might be difficult to achieve hence the assumption is risky.\\
+The report assumes country specific power capacity of $1 TW$ in 2020 and emission factor of $\mathbf{0.55} \mathbf{kg}CO_2\mathbf{e} / kWh$ both referenced generically to \emph{EIA} leading to both figures being untraceable. The energy saving ratio and saving potential are the same as in worldwide calculations what may lead to inaccurate calculations as each country has different economic.\\
+
+In Germany this sublever can save $\mathbf{0.3} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{1.4} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table what is an obvious mistake. Furthermore it is obvious the in the sub-model details this row is copied-and-pasted from the US table as it says ``...capacity in US in 2020...''. The authors of the report claim small potential of this sublever on the country level but do not elaborate on it.\\
+
+In India this sublever can save $\mathbf{1} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{0.8} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table. It is inconsistently called here \emph{demand response} and aims at reducing peak-load electricity unfortunately India is lacking infrastructure for this sector to play significant role.\\
+The report assumes country specific power capacity of $0.39 TW$ in 2020 and emission factor of $\mathbf{0.8} \mathbf{kg}CO_2\mathbf{e} / kWh$ both referenced generically to~\citep{grid2008green} which does not contain both figures causing them to be untraceable. The energy saving ratio and saving potential are the same as in worldwide calculations what may lead to inaccurate calculations as each country has different economic.\\
 
 
 \subsubsection{Sublever reconstruction\label{sec:dm:reconstruction}}
-According to~\citep{eia2011} the world power capacity was $5.331045 TW$ in 2011, and the closest estimate that I could find for 2020 is $5.8 TW$ read from the graph in~\ref{2002iba}.\\
+According to~\citep{eia2011} the world power capacity was $5.331045 TW$ in 2011, and the closest estimate that I could find for 2020 is $5.8 TW$ read from the graph in~\ref{2002iba}. The capacities of: China, US, Germany, and India in 2011 are in order: $1.1 TW$, $1.1 TW$, $0.2 TW$, and $0.2 TW$ (\citep{eia2011}). The estimations for 2020 could not be found.\\
+The average world emission rate according to~\citep{iea2012co2} is $\mathbf{0.534 kg}CO_2\mathbf{e}/\mathbf{kWh}$ and country specific figures are (in preserved order): $\mathbf{0.790 kg}CO_2\mathbf{e}/\mathbf{kWh}$, $\mathbf{0.528 kg}CO_2\mathbf{e}/\mathbf{kWh}$, $\mathbf{0.468 kg}CO_2\mathbf{e}/\mathbf{kWh}$, and $\mathbf{0.936 kg}CO_2\mathbf{e}/\mathbf{kWh}$.\\
 
-For the reconstruction $\mathbf{0.534 kg}CO_2\mathbf{e}/\mathbf{kWh}$ (\citep{iea2012co2})\\
-
-To calculate abatement potential we multiply $powerCapacity$ of selected country by $reductionRate$ to get addressable poewr reduction. Then we multiply this value by corresponding $emissionRate$ to get addressable emission; and finally, we multiply that by $savingPotential$ to get $abatementPotential$.
-
+Used model is the same as presented in~\citep{grid2008green}.\\
+To calculate abatement potential we multiply $powerCapacity$ of selected country by $reductionRate$ to get addressable power reduction. Then we multiply this value by corresponding $emissionRate$ to get addressable emission; and finally, we multiply that by $savingPotential$ to get $abatementPotential$.\\
 
 \begin{gather*}
   reducedCapacity = capacity * reductionRate\\
@@ -130,10 +138,34 @@ To calculate abatement potential we multiply $powerCapacity$ of selected country
   abatementPotential = addressableEmission *\\
   \quad\quad\quad\quad\quad savingPotential
 \end{gather*}
+The results of reconstruction are presented in \emph{table}~\ref{tab:dm} below.
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{ p{.16\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} }
+       & Cn & US & De & In & ALL \\
+      \hline
+      SMARTer & 4.2 & 1.4 & 1.4 & 0.8 & 10 \\
+      SMer rec. & 4.2 & 1.4 & 1.4 & 0.8 & 10 \\
+      SMer-pc---ext-er & 4.1 & 1.4 & 1.2 & 0.9 & 9.6 \\
+      ex-pc---ext-er & 2.3 & 1.5 & 0.2 & 0.5 & 7.4 \\
+      ex-pc---SMer-er & 2.3 & 1.6 & 0.3 & 0.4 & 7.6
+    \end{tabular}
+    \caption{Demand management abatement potential in $\mathbf{Mt}CO_2\mathbf{e}$. \label{tab:dm}}
+  \end{table}
+\end{center}
+Results reconstructed with SMARTer assumptions are the same for global and country specific case as results presented in the report. Results achieved with \emph{SMARTer power capacity} and alternative \emph{emission rates} are also similar to above two for all cases but Germany: we can see the difference caused by error introduced in the report.\\
+For \emph{external power capacity} and \emph{emission rates} the result is similar for US and global case; fairly close estimate to the report figure for India; and half of the China emission. The Germany emission decreases significantly as it is not affected by error in the report and should be better estimate at $\mathbf{0.2Mt}CO_2\mathbf{e}$. The results for \emph{external power capacity} and \emph{SMARTer emission rates} are fairly close to the previous one.
 
 
 \subsection{Time-of-day pricing}
 \subsection{Power-load balancing}
+
+
+
+
+
+
+\newpage
 \subsection{Power grid optimization}
 
 In the US dirty power mix: 37\% coal with factor $\mathbf{0.67} \mathbf{kg}CO_2\mathbf{e} / kWh$\\
@@ -146,12 +178,14 @@ it benefits generation as they can predict the usage\\
 India: T\&D loss is estimated to be 22\% and in some places reach 50\% - THE SOURCE CAN BE FOUND BUT THE DATA IS FROM 1999 - A BIT TOO OLD??\\
 
 
-\newpage
+
 \subsection{Integration of renewables in power generation}
 
 
 In China abatement potential in this sublever is $\mathbf{153} \mathbf{Mt}CO_2\mathbf{e}$ and can be achieved by investing and expanding renewable sources of energy. In the report use of carbon free energy is considered as one of major factors it lacks explanations and details on its use.\\
 This sublever has strong government support nevertheless its expansion is slowed down by missing ICT enabled smart grid that can efficiently use it. It is not explained how 
+\newpage
+
 
 
 
