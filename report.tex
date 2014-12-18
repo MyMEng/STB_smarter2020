@@ -127,6 +127,7 @@ The report assumes country specific power capacity of $0.39 TW$ in 2020 and emis
 \subsubsection{Sublever reconstruction\label{sec:dm:reconstruction}}
 According to~\citep{eia2011} the world power capacity was $5.331045 TW$ in 2011, and the closest estimate that I could find for 2020 is $5.8 TW$ read from the graph in~\ref{2002iba}. The capacities of: China, US, Germany, and India in 2011 are in order: $1.1 TW$, $1.1 TW$, $0.2 TW$, and $0.2 TW$ (\citep{eia2011}). The estimations for 2020 could not be found.\\
 The average world emission rate according to~\citep{iea2012co2} is $\mathbf{0.534 kg}CO_2\mathbf{e}/\mathbf{kWh}$ and country specific figures are (in preserved order): $\mathbf{0.790 kg}CO_2\mathbf{e}/\mathbf{kWh}$, $\mathbf{0.528 kg}CO_2\mathbf{e}/\mathbf{kWh}$, $\mathbf{0.468 kg}CO_2\mathbf{e}/\mathbf{kWh}$, and $\mathbf{0.936 kg}CO_2\mathbf{e}/\mathbf{kWh}$.\\
+Finally, the report states 4\% saving potential referring to~\citep{grid2008green}, but the source estimates saving potential as 5\% with strong assumption of 43\% of customers implementing a cost-effective combination of demand response enabling technologies. Applying 5\% value instead of 4\% value yields slightly higher abatement potential than one reconstructed in \emph{table}~\ref{tab:dm} and can be calculated with the use of designed tool.\\
 
 Used model is the same as presented in~\citep{grid2008green}.\\
 To calculate abatement potential we multiply $powerCapacity$ of selected country by $reductionRate$ to get addressable power reduction. Then we multiply this value by corresponding $emissionRate$ to get addressable emission; and finally, we multiply that by $savingPotential$ to get $abatementPotential$.\\
@@ -150,14 +151,57 @@ The results of reconstruction are presented in \emph{table}~\ref{tab:dm} below.
       ex-pc---ext-er & 2.3 & 1.5 & 0.2 & 0.5 & 7.4 \\
       ex-pc---SMer-er & 2.3 & 1.6 & 0.3 & 0.4 & 7.6
     \end{tabular}
-    \caption{Demand management abatement potential in $\mathbf{Mt}CO_2\mathbf{e}$. \label{tab:dm}}
+    \caption{Demand management abatement potential in $\mathbf{Mt}CO_2\mathbf{e}$ with 4\% saving potential. \label{tab:dm}}
   \end{table}
 \end{center}
 Results reconstructed with SMARTer assumptions are the same for global and country specific case as results presented in the report. Results achieved with \emph{SMARTer power capacity} and alternative \emph{emission rates} are also similar to above two for all cases but Germany: we can see the difference caused by error introduced in the report.\\
-For \emph{external power capacity} and \emph{emission rates} the result is similar for US and global case; fairly close estimate to the report figure for India; and half of the China emission. The Germany emission decreases significantly as it is not affected by error in the report and should be better estimate at $\mathbf{0.2Mt}CO_2\mathbf{e}$. The results for \emph{external power capacity} and \emph{SMARTer emission rates} are fairly close to the previous one.
+For \emph{external power capacity} and \emph{emission rates} the result is similar for US and global case; fairly close estimate to the report figure for India; and half of the China emission. The Germany emission decreases significantly as it is not affected by error in the report table and should be better estimate at $\mathbf{0.2Mt}CO_2\mathbf{e}$ (close to the figure stated in the text). The results for \emph{external power capacity} and \emph{SMARTer emission rates} are fairly close to the previous one.
 
 
 \subsection{Time-of-day pricing}
+\subsubsection{Abatement potential review}
+The report estimates \emph{addressable emission} from the world power generation as $\mathbf{21.48Gt}CO_2\mathbf{e}$. This figure is referenced generically to \emph{IEA} and the particular numbers could not be found nevertheless, \emph{IEA} source (\citep{iea2012co2}) was used for reconstruction.\\
+The report sourced the total \emph{saving potential} from~\citep{pratt2010smart} but the value of 1\% could not be identified in the paper; but it could be recovered that saving potential could be 1.3--3.8\%.\\
+
+In China \emph{time-of-day pricing} can save $\mathbf{79} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{79.2} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table. This sublever abatement potential is based on innovative variable electricity tariffs pricing mechanisms constructed based on consumption time, and are used to shift demand form peak to off-peak hours (this causes more equal spread of energy use through day and allow to reduce emissions by lowering peak-capacity of power plants). This approach can prevent supply shortage during peak hours and decrease total power demand. The later argument is not justified as shifting demand will not necessary cause demand decrease. Moreover, this sublever seems to be part of another one: ``power-load balancing'' and ``demand management'' causing potential overlay and lesser abatement potential. To introduce dynamic pricing power infrastructure in China needs to be upgraded.\\
+
+In the US the sublever can save $\mathbf{22} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{21.7} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table. To achieve this abatement potential US government needs to introduce proper electricity market to reduce demand on the grid and increase number of base load.\\
+The sub-model description details calculation of \emph{addressable emission} as multiplication of produced electricity and emission factor. This model will be used for data reconstruction.\\
+
+In Germany the sublever can save $\mathbf{3.2} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{21.7} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table what is an obvious mistake: copy-paste error from US data. It is indicated that in Germany successful deployment of time-of-day pricing leading to shift in peak-consumption to base load, highly depends on installation of smart meters as the variable tariffs are offered since 2011. Electricity meter infrastructure upgrade has been attempted for a long time without major success (weak business case) and may jeopardize success of this sublever. Furthermore installation of smart meters is part of \emph{grid-optimization} has there may be potential overlay in abatement potential.\\
+
+In India the sublever can save $\mathbf{13.8} \mathbf{Mt}CO_2\mathbf{e}$ according to text and the same amount according to the corresponding table. This sublever may be crucial for urban areas where lowering peak demand caused by air-conditioning may lead to great abatement potential. If successful it would encourage off-peak energy use hence decrease extra capacity needed which is usually produced by highly polluting ``peaker plants''---this sublever has potential overlay with other targeting at lowering peak-demand. Unfortunately \emph{time-of-day pricing} requires ICT-enabled smart grid to coordinate prices and fluctuations in supply and demand---this dependence may have significant influence on realising these plans.\\
+
+All country specific data sources in the report are the same as for worldwide case.
+
+\subsubsection{Sublever reconstruction\label{sec:todp:reconstruction}}
+To reconstruct the calculations I use saving potential mentioned in~\citep{faruqui2005quantifying}: 2.37\%. The emission rates for electricity production are the same as in previous sublever reconstruction (\citep{iea2012co2}) and power sector electricity production are taken from~\citep{eia2011}: China---4491$TWh$, USA---$4048TWh$, Germany---$576TWh$, and India---$975TWh$.\\
+
+To calculate abatement potential we multiply $energyGeneration$ of selected country by $emissionRate$ to get addressable emission. Then we multiply this value by corresponding $savingPotential$ to get $abatementPotential$.
+\begin{gather*}
+  addressableEmission = energyGeneration *\\
+  \quad\quad\quad\quad\quad emissionRate\\
+  abatementPotential = addressableEmission *\\
+  \quad\quad\quad\quad\quad savingPotential
+\end{gather*}
+The results of reconstruction are presented in \emph{table}~\ref{tab:todp} below.
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{ p{.16\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} }
+       & Cn & US & De & In & ALL \\
+      \hline
+      SMARTer & 79.2 & 21.7 & 21.7 & 13.8 & 210 \\
+      SMer rec. & 79.2 & 21.7 & 21.7 & 13.8 & 215 \\
+      ex-gen---SMer-em & 35.9 & 22.3 & 3.2 & 7.8 & 116 \\
+      ex-gen---ex-em & 35.5 & 21.4 & 2.7 & 9.1 & 113
+    \end{tabular}
+    \caption{Time-of-day pricing abatement potential in $\mathbf{Mt}CO_2\mathbf{e}$ with 1\% saving potential. \label{tab:todp}}
+  \end{table}
+\end{center}
+
+The values presented in the report and reconstructed based on data provided in the report are the same. The 3\ts{rd} row was achieved using found electricity production and SMARTer country specific emission rates. In this case abatement potential of China, India, and worldwide is half of the values presented in the report. The US reconstruction is very close to the one in the report, and the value for Germany is close to the figure mentioned in text of the report being more realistic estimate. The final row calculated with found electricity production and emission rate values is very similar to calculations with SMARTer's emission rates.
+
+
 \subsection{Power-load balancing}
 
 
