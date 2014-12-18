@@ -202,15 +202,65 @@ The results of reconstruction are presented in \emph{table}~\ref{tab:todp} below
 The values presented in the report and reconstructed based on data provided in the report are the same. The 3\ts{rd} row was achieved using found electricity production and SMARTer country specific emission rates. In this case abatement potential of China, India, and worldwide is half of the values presented in the report. The US reconstruction is very close to the one in the report, and the value for Germany is close to the figure mentioned in text of the report being more realistic estimate. The final row calculated with found electricity production and emission rate values is very similar to calculations with SMARTer's emission rates.
 
 
+
 \subsection{Power-load balancing}
+\subsubsection{Abatement potential review}
+The report estimates \emph{addressable emission} of $\mathbf{0.38Gt}CO_2\mathbf{e}$ from the world power generation as $\mathbf{0.64Gt}CO_2\mathbf{e}$---non-base electircity generation associated with oil. This figure is referenced generically to \emph{IEA} and the report and particular numbers could not be identified. The \emph{saving potential} is based on penetration of storage: 60\% which also could not be found in~\citep{pieper2011revisiting}.\\
+
+In China \emph{power-load balancing} can save $\mathbf{9} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{8.6} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table. This sublever does not have strong business case due to low energy prices. The suggested solution is rising electricity prices to make the economics favourable which may not be a good idea and contradict with dynamic energy pricing with potential overlay. Presented case study proves that it is possible to quickly and reliably drive down consumers overall power consumption by 15-30\% nevertheless it is not clear how this was done.\\
+
+In the US \emph{power-load balancing} can save $\mathbf{13} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{13.1} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table. The report claims large abatement potential in this sublever which deployment is technologically limited nevertheless it does not clarify lacking technologies. Furthermore regulatory changes are necessary to enable predicted abatement potential.\\
+
+Germany can abate $\mathbf{0.2} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{13.1} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table (another copy-paste error) by balancing peak demand with off-peak storage. Here potential is low due to existing efficient hydro and other pump storage.\\
+
+Finally, in India saving potential is $\mathbf{9.6} \mathbf{Mt}CO_2\mathbf{e}$ according to text and the same in the corresponding table. Here, addressable emission is linked to $19TWh$ of non-base oil electricity generators leading to emission of $\mathbf{17.8} \mathbf{Mt}CO_2\mathbf{e}$ with factor $\mathbf{0.936 kg}CO_2\mathbf{e}/\mathbf{kWh}$ which seems reasonable compared to presented $\mathbf{16} \mathbf{Mt}CO_2\mathbf{e}$.\\
+In India power-load balancing can reduce overall power capacity and can prevent using highly polluting peak-plants by releasing by releasing off-peak energy when additional capacity is needed. This procedure requires good timing hence advanced ICT-enabled smart grid infrastructure to coordinate supply and demand. Furthermore, this sublever is crucial if renewables scale to more than 15\%.\\
+
+All country specific data sources in the report are the same as for worldwide case.
+
+\subsubsection{Sublever reconstruction\label{sec:plb:reconstruction}}
+I was only able to reconstruct the abatement potential with data (both: addressable emission of non-base oil electricity generation, and saving potential) given in the report. I could not find the sources for non-base oil electricity generation for chosen regions and identify the corresponding saving potential.\\
+This value was only presented for India hence the reconstructed figure in the \emph{table}~\ref{tab:plb}.\\
+
+To calculate abatement potential we multiply $energyGeneration$ (non-base oil electricity generation) of selected country by $emissionRate$ to get addressable emission. Then we multiply this value by corresponding $savingPotential$ to get $abatementPotential$.
+\begin{gather*}
+  addressableEmission = energyGeneration *\\
+  \quad\quad\quad\quad\quad emissionRate\\
+  abatementPotential = addressableEmission *\\
+  \quad\quad\quad\quad\quad savingPotential
+\end{gather*}
+The results of reconstruction are presented in \emph{table}~\ref{tab:plb} below.
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{ p{.16\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} | p{.04\textwidth} }
+       & Cn & US & De & In & ALL \\
+      \hline
+      SMARTer & 8.6 & 13.1 & 13.1 & 9.6 & 380 \\
+      SMer rec. & 8.58 & 13.08 & 13.08 & 13.8 & 384 \\
+      Ex. emission & Na & Na & Na & 10.67 & Na
+    \end{tabular}
+    \caption{Power-load balancing abatement potential in $\mathbf{Mt}CO_2\mathbf{e}$ with 60\% saving potential. \label{tab:plb}}
+  \end{table}
+\end{center}
+
+Values presented in the report and one reconstructed based on the report are similar. Reconstruction for India based on given non-base oil electricity generation slightly differ. The value given in tables for Germany is wrong as again it was replaced with values for the US nevertheless, the figure $\mathbf{0.2} \mathbf{Mt}CO_2\mathbf{e}$ presented in text seems to be correct.
 
 
 
 
 
 
-\newpage
+
+
+
+
+
+
+
+
 \subsection{Power grid optimization}
+
+
 
 In the US dirty power mix: 37\% coal with factor $\mathbf{0.67} \mathbf{kg}CO_2\mathbf{e} / kWh$\\
 
@@ -228,7 +278,16 @@ India: T\&D loss is estimated to be 22\% and in some places reach 50\% - THE SOU
 
 In China abatement potential in this sublever is $\mathbf{153} \mathbf{Mt}CO_2\mathbf{e}$ and can be achieved by investing and expanding renewable sources of energy. In the report use of carbon free energy is considered as one of major factors it lacks explanations and details on its use.\\
 This sublever has strong government support nevertheless its expansion is slowed down by missing ICT enabled smart grid that can efficiently use it. It is not explained how 
-\newpage
+
+
+
+
+
+
+
+
+
+
 
 
 
