@@ -4,6 +4,7 @@
 \usepackage{cite} % BiTeX
 \usepackage[square]{natbib}
 \usepackage{amsmath}
+\usepackage{graphicx}
 \newcommand{\ts}{\textsuperscript}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
@@ -452,19 +453,28 @@ the reconstructed values are $\mathbf{0.17} \mathbf{Gt}CO_2\mathbf{e}$ with work
 
 \section{Reconstruction tool}
 To reconstruct the abatement calculations based on figures given in SMARTer2020 report and proposed new sources I constructed interactive \texttt{Julia} program which uses \texttt{Interact} package to facilitate buttons and sliders. The tool should be view in \texttt{IPython} interface to \emph{Julia} with non interactive version available at \url{http://nbviewer.ipython.org/github/So-Cool/smarter2020/blob/master/Tools/Analyser.ipynb}.\\
-Both these technologies are used as they allow to alternate \texttt{MarkDown} containing calculation details and code performing the calculation containing interactive element to crunch the numbers.
+Both these technologies are used as they allow to alternate \texttt{MarkDown} containing calculation details and code performing the calculation containing interactive element (see figure below) to crunch the numbers.
 
+\begin{center}
+\noindent\includegraphics[scale=0.4]{interface.png}
+\end{center}
 
 \section{Conclusions}
-The striking features of reviewed report are inconsistency, lack of high-detailed methodology explanations, poor referencing style.\\
-In the introduction the total abatement potential is presented as $\mathbf{9.1} \mathbf{Gt}CO_2\mathbf{e}$ but simple summation of numbers presented in one of tables gives $\mathbf{9} \mathbf{Gt}CO_2\mathbf{e}$. Furthermore \emph{Manufacturing} is presented to have $\mathbf{1.2} \mathbf{Gt}CO_2\mathbf{e}$ in text and $\mathbf{1.3} \mathbf{Gt}CO_2\mathbf{e}$ in figure. Majority of errors seems to be caused by rounding and different decimal accuracy in different places of the report. There are also different estimates of abatement potential per country level appearing in the text and table indicating poor sanity check.\\
-\emph{Business case assessment} figures lack explanation of sources used and methodology applied to arrive at \emph{overall business case} estimate. Major part of the report does not consider negative influence of applied ICT technology and emission of it while in use.\\
-It is relatively hard to find many of referred documents, and locate extracted data.\\
+The striking features of reviewed report are high inconsistency, lack of high-detailed methodology and model explanations, poor referencing style, and some data sources not being publicly available.\\
 
-The \emph{Power} sector shows vast inconsistency in sublever naming for different countries and as mentioned above different decimal point accuracy in different places of the report.\\
-Majority of sublevers presented in \emph{Power} sector is highly dependant on advanced ICT-enabled smart grid infrastructure, which only can be build with wide support of the government. If building it fails majority of abatement potential in \emph{Power} sector is in danger of failure. Furthermore, because of high dependence, on smart-grid there is potential overlay in abatement potential which is not addressed in the report and also clear boundaries between sublevers are not stated.\\
+In the introduction, the total abatement potential is presented as $\mathbf{9.1} \mathbf{Gt}CO_2\mathbf{e}$ but simple summation of numbers presented in one of tables gives $\mathbf{9} \mathbf{Gt}CO_2\mathbf{e}$. Furthermore \emph{Manufacturing} is presented to have $\mathbf{1.2} \mathbf{Gt}CO_2\mathbf{e}$ in text and $\mathbf{1.3} \mathbf{Gt}CO_2\mathbf{e}$ in corresponding figure. Majority of errors seems to be caused by rounding and not consistent decimal accuracy. There are also different estimates of abatement potential per country appearing in the text and tables; with the worst mistake being abatement potential table for Germany being copy of US one. All these mistakes indicate poor editing and lack of sanity check before publication.\\
+
+Furthermore, \emph{Business case assessment} figures lack indication of sources, explanation of used methodology leading to ambiguous \emph{overall business case} estimate. Major part of the report does not consider negative influence of applied ICT technology and emission of it while in use same as possible rebound effect.\\
+
+The referencing style is not academic and is of poor quality. For large part of references it is relatively hard to find corresponding documents, and locate extracted data. Sometimes used data is outdated with newer estimates being widely available.\\
+
+The \emph{Power} sector shows vast inconsistency in sublever naming for different countries and as mentioned above inconsistency in decimal point accuracy through \emph{the report}.\\
+
+Majority of sublevers presented in \emph{Power} sector is highly dependant on advanced ICT-enabled smart grid infrastructure, which only can be build with strong support of the government. If building it fails majority of abatement potential in \emph{Power} sector is in danger of not being realised. Furthermore, because of high dependence, on smart-grid there is potential overlay in abatement potential which is not addressed in the report---it lacks clear boundaries between sublevers.\\
+
 Moreover, abatement potential is highly dependant on data collection and analysis. The first one is easy to achieve but the later requires data centres and tools to extract information relevant for emission reduction.\\
-Furthermore, people willingness to act upon smart meter readings and electricity price-variation is not considered in the report. Wealthy people may not care how much they pay or when they use electricity. It also requires some work to schedule one's task to fit into low and high tariffs which sometimes may be overwhelming.\\
+
+Furthermore, people willingness to act upon smart meter readings and electricity price-variation is not considered in the report. Wealthy people may not care how much they pay or when they use electricity hence they lower emission abatement. It also requires some work to schedule one's task to fit into low and high tariffs which sometimes may be overwhelming.\\
 For businesses consumers both these factors might be irrelevant as they may not be able to shift business operating hours to off-peak periods and businesses operating 24/7 will not benefit from it.\\
 
 In most cases, high upfront cost of infrastructure upgrade is deterring factor. Without government subsidiaries, financing, or tax exempt it might be hard to introduce all the changes especially that majority of them has long return time.
