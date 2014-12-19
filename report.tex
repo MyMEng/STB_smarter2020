@@ -33,13 +33,14 @@
 \vspace*{1em}\end{@twocolumnfalse}]
 
 {\small
-\noindent Abbreviations used
+\noindent Glossary
 \begin{description}
-\item[ICT] Information Communications Technology
-\item[GHG] Green House Gases
-\item[$\mathbf{CO_2e}$] $CO_2$ equivalents
 \item[BAU] Business as Usual
+\item[$\mathbf{CO_2e}$] $CO_2$ equivalents
+\item[GHG] Green House Gases
+\item[ICT] Information Communications Technology
 \item[T\&D] Transmission and Distribution
+\item[the report] SMARTer 2020 report
 \item[VPP] Virtual Power Plant
 \end{description}}
 
@@ -259,26 +260,84 @@ Values presented in the report and one reconstructed based on the report are sim
 
 
 \subsection{Power grid optimization}
+\subsubsection{Abatement potential review}
+The report estimates \emph{power grid optimisation} abatement of $\mathbf{0.33Gt}CO_2\mathbf{e}$. This figure is referenced to~\citep{teri:td} and the report takes best-case-scenario of 7\% of power capacity being lost during transmission and distribution (with worst case of 15.5\%). This source is a bit old (1999) and beter estimates can be found. The saving potential estimate of 30\% is referenced to~\citep{webb2008smart} and this figure could be identified for particular case of Indian power grid. Moreover~\citep{webb2008smart} claims ``30\% reduction (14\% to 10\%) of T\&D losses for developed countries and 38\% (24\% to 15\%) reduction for developing countries'', which is both not clear and not justified or backed with any references.\\
+
+In China \emph{power grid optimisation balancing} can save $\mathbf{143} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{142.5} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table. This sublever's abatement potential can be achieved by optimisation and ICT modernisation of grid infrastructure. The estimates are based on recent efforts and promises of government to optimise grid with ICT technology.\\
+The data provided for this estimate are reasonable with country specific T\&D loss identified in indicated reference.\\
+
+The US abatement potential in this sublever is $\mathbf{91} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{45.5} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table, which is quite significant difference. In US optimising ageing power grid is essential for reducing T\&D losses and reliability concerns. ICT is important for both communication and optimisation perspective: monitoring the grid and providing real time optimisation for its use.\\
+Presented study case that installing meters and sensors is only a first step towards optimisation as to make actual improvements collected data analysis is needed which may not be available for all providers. This issue was addressed in ``Echelon'' study case modular data processing over big data-centre approach. ``Echelon'' meters filter and pre-process data prior to sending them for analysis to data-centre hence cut the processing time.\\
+The data provided for this estimate are reasonable with country specific T\&D loss identified in indicated reference.\\
+
+Germany can abate $\mathbf{5.71} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{45.5} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table (another US-Germany copy-paste error). Germany has relatively modern and efficient power infrastructure with small T\&D losses nevertheless, these cannot be eliminated.\\
+Study case for Germany describes trial of smart grid with smart meters to deliver more detailed consumptions patterns to customers.It assumes that consumer could identify the appliance which uses the most energy and avoid energy consumptions during peak hours. The response of customer to such innovation may be hard to predict and should be treated with care. Furthermore, the upgraded infrastructure benefited generation as the usage could be predicted. The study also claims (\emph{without reference}) that average household could save 4\% of energy with smart meters nevertheless, \citep{bbc:smartmeters} states savings of only 2\%.\\
+The figure for T\&D losses for Germany vary through the report: the table gives 7\%, the text 6\% but the reference (\citep{teri:td}) claims 4\% hence possibly smaller abatement potential than estimated.\\
+
+
+In India saving potential is $\mathbf{91.4} \mathbf{Mt}CO_2\mathbf{e}$ according to text and $\mathbf{91} \mathbf{Mt}CO_2\mathbf{e}$ according to the table. This sublever addresses massive (22\% on average, reaching 50\% in some places) T\&D losses by building ICT-enabled grid. Such grid would gather information on consumption behaviour and suppliers status (state of power generators, transmitters, and distributors) to resolve overall grid inefficiencies such as popular in India power theft or local inefficiencies.\\
+The first suggested step toward reducing T\&D losses is to deploy smart meters---it is easy to do and easily detect majority of inefficiencies.\\
+The text explicitly assumes reduction by $\frac{1}{3}$ (30\% in tables) of T\&D losses which would still be high by international standards, nevertheless, would yield high abatement potential. Why this number for this country and why it goes for others.\\
+
+In each case we assume 30\% saving potential but it is highly country dependant.\\
+
+\subsubsection{Sublever reconstruction\label{sec:pgo:reconstruction}}
+I reconstructed calculations for this subelver with data provided in the report and improved them with newer data sources. The country specific losses were sourced from~\citep{wb:2011:td} and are listed in \emph{table}~\ref{tab:td:bycountry}, electricity generation values (listed in \emph{section}~\ref{sec:todp:reconstruction}) from~\citep{eia2011}, and emission rates (listed in \emph{section}~\ref{sec:dm:reconstruction}) from~\citep{iea2012co2}.\\
+
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{ p{.06\textwidth} | p{.06\textwidth} | p{.06\textwidth} | p{.06\textwidth} | p{.06\textwidth} }
+      Cn & US & De & In & ALL \\
+      \hline
+      6 & 6 & 4 & 21 & 8.1
+    \end{tabular}
+    \caption{T\&D losses by region in \%. \label{tab:td:bycountry}}
+  \end{table}
+\end{center}
+
+To calculate abatement potential we multiply $loss$ factor and $energyGeneration$ value of selected country to get energy lost during transmission and distribution. To get $addressableEmission$ we muliply it by $emissionRate$.Finally, we multiply this value by corresponding $savingPotential$ to get $abatementPotential$.
+\begin{gather*}
+  lostEnergy = loss *\\
+  \quad\quad\quad\quad\quad energyGeneration\\
+  addressableEmission = lostEnergy *\\
+  \quad\quad\quad\quad\quad emissionRate\\
+  abatementPotential = addressableEmission *\\
+  \quad\quad\quad\quad\quad savingPotential
+\end{gather*}
+The results of reconstruction are presented in \emph{table}~\ref{tab:pgo} below.
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{ p{.12\textwidth} | p{.05\textwidth} | p{.05\textwidth} | p{.05\textwidth} | p{.05\textwidth} | p{.05\textwidth} }
+       & Cn & US & De & In & ALL \\
+      \hline
+      SMARTer & 142.5 & 45.5 & 45.5 & 91 & 330 \\
+      SMer rec. & 142.5 & 45.48 & 45.48 & 90.9 & 330 \\
+      Ex. emission & 63.86 & 38.47 & 3.23 & 57.49 & 273.55
+    \end{tabular}
+    \caption{Power grid optimisation abatement potential in $\mathbf{Mt}CO_2\mathbf{e}$ with 30\% saving potential. \label{tab:pgo}}
+  \end{table}
+\end{center}
+The reconstructed abatement potentials based on the report values are the same as the figures presented in the report. For the external sources of data the US reconstruction is fairly close to figure presented in the report. The German abatement reconstruction is fairly close to the value presented in the text and way lower than the one presented in the table which is value for US due to copy-paste mistake. The reconstruction for the world is fairly close being 88\% of the value presented in the report. Finally, the reconstruction for the India an China is significantly smaller than values presented in the report leading to smaller abatement potential.
 
 
 
-In the US dirty power mix: 37\% coal with factor $\mathbf{0.67} \mathbf{kg}CO_2\mathbf{e} / kWh$\\
 
-In Germany it is claimed \emph{without reference} that average household could save 4\% of energy with smart meters. \citep{bbc:smartmeters} claim that savings are only 2\%.\\
-business case describes trial of smart grid with smart meters to deliver more detailed consumptions patterns to customers; it as- sumes that consumer could identify the appliance which uses the most energy - CAN BE QUITE HARD AS YOU GET READ- INGS FROM THE HOME NOT PARTICULAR APPLIANCES\\
-they could also avoid energy consumptions during peak hours HOW ? STOP USING IT?\\
-it benefits generation as they can predict the usage\\
 
-India: T\&D loss is estimated to be 22\% and in some places reach 50\% - THE SOURCE CAN BE FOUND BUT THE DATA IS FROM 1999 - A BIT TOO OLD??\\
+
+
+
+
+
 
 
 
 \subsection{Integration of renewables in power generation}
-
-
+\subsubsection{Abatement potential review}
 In China abatement potential in this sublever is $\mathbf{153} \mathbf{Mt}CO_2\mathbf{e}$ and can be achieved by investing and expanding renewable sources of energy. In the report use of carbon free energy is considered as one of major factors it lacks explanations and details on its use.\\
 This sublever has strong government support nevertheless its expansion is slowed down by missing ICT enabled smart grid that can efficiently use it. It is not explained how 
+\subsubsection{Sublever reconstruction\label{sec:irpg:reconstruction}}
 
+In the US dirty power mix: 37\% coal with factor $\mathbf{0.67} \mathbf{kg}CO_2\mathbf{e} / kWh$\\
 
 
 
