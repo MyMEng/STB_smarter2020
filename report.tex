@@ -39,6 +39,7 @@
 \item[$\mathbf{CO_2e}$] $CO_2$ equivalents
 \item[GHG] Green House Gases
 \item[ICT] Information Communications Technology
+\item[PV] photo voltaic
 \item[T\&D] Transmission and Distribution
 \item[the report] SMARTer 2020 report
 \item[VPP] Virtual Power Plant
@@ -333,14 +334,45 @@ The reconstructed abatement potentials based on the report values are the same a
 
 \subsection{Integration of renewables in power generation}
 \subsubsection{Abatement potential review}
-In China abatement potential in this sublever is $\mathbf{153} \mathbf{Mt}CO_2\mathbf{e}$ and can be achieved by investing and expanding renewable sources of energy. In the report use of carbon free energy is considered as one of major factors it lacks explanations and details on its use.\\
-This sublever has strong government support nevertheless its expansion is slowed down by missing ICT enabled smart grid that can efficiently use it. It is not explained how 
+The report estimates \emph{integration of renewables potential} as $\mathbf{0.85Gt}CO_2\mathbf{e}$. As source for addressable emission it states~\citep{iea:etp} but the report cannot be freely accessed to confirm the figures. The saving potential is taken form~\citep{webb2008smart}, but the figure could not be identified. The report mentions 10\% reduction of generation in developed countries and 5\% reduction in developing countries due to integration of renewables but do not justify these numbers with reference.\\
+
+In China abatement potential in this sublever is $\mathbf{153} \mathbf{Mt}CO_2\mathbf{e}$ according to the text and $\mathbf{152.8} \mathbf{Mt}CO_2\mathbf{e}$ accordign to the table, and can be achieved by investing and expanding renewable sources of energy. In the report use of carbon free energy is considered as one of major factors it lacks explanations and details on its use. This sublever has strong government support nevertheless its expansion is slowed down by missing ICT enabled smart grid that can efficiently use it hence, potential overlay with power grid optimisation.\\
+The saving potential is 100\% of addressable emission and is based on \emph{IEA} projections for the integration of renewables which could not be identified (same as addressable emission).\\
+
+In the US integrating renewables can save $\mathbf{197} \mathbf{Mt}CO_2\mathbf{e}$ according to the text and $\mathbf{84.7} \mathbf{Mt}CO_2\mathbf{e}$ according to the corresponding table, which significantly differs. This sublever is nearly half of the power abatement potential in the USA. The success of this sublever highly depends on improving the grid infrastructure and preparing it for intermittent generation---most of energy produced by renewable fluctuates depending on weather or time of day and must be well managed to ensure that supply meets the peak demand and current ageing and inefficient grid makes this task difficult. This dependence on advanced grid infrastructure and power load balancing may lead to possible overlay with abatement potential of two aforementioned sublevers. Advanced ICT technologies will improve communication between grid operators and renewable power plants making complex weather analysis possible giving better future generation predictions and possible optimisations.\\
+Currently replacing grid electricity with carbon-free electricity depends on RPS at state level hence new legislations are needed to enforce changes. Moreover, the sublever has weak business case due to high upfront cost and low energy prices makes selling green energy overhead unprofitable for private customers. As in global case the source and calculation of addressable emission are unclear. Moreover, the saving potential is givan as 100\% without any clarification.\\
+
+In Germany the abatement potential due to integration of renewables is $\mathbf{28.8} \mathbf{Mt}CO_2\mathbf{e}$ according to the text and $\mathbf{84.7} \mathbf{Mt}CO_2\mathbf{e}$ in the table (copy-paste error). Due to German nuclear phase-out plan integrating new renewables is necessary to avoid emission increase. Due to phase-out it may appear that integrating renewables will not have any effect emission as instead of replacing fossil-fuel energy production it will reduce low-emission nuclear power. Unfortunately it is unclear whether the report assumes the addressable emission as the replaced fossil-fuel generation or cleaner nuclear energy.\\
+ICT technologies are needed to integrate renewables into the grid and maximise their efficiency as well as contribute to large scale storage systems (currently lacking cheap storage for PV energy), and north-south transmission lines.\\
+Again the saving potential is 100\% of addressable emission and is based on \emph{IEA} projections for the integration of renewables which could not be identified (same as addressable emission).\\
+
+In India the abatement potential is estimated as $\mathbf{23.8} \mathbf{Mt}CO_2\mathbf{e}$ according to the text and corresponding table. In this sublever India has large reduction potential because of large unused solar and wind capacity. It represents attractive option for many people unconnected to grid, but the report does not address potential overlay with \emph{integration of off-grid resources} sublever. Despite production being decoupled with energy use in India there is predicted increase in use of electricity by 91.7\% (source not stated) between 2009 and 2020 ICT will play important role  in synchronising supply and demand and replacing dirty fossil-fuel energy with zero-emission one.\\
+As in global case the source and calculation of addressable emission are unclear. Moreover, the saving potential is givan as 25\% without any clarification.\\
+
+In general it is unclear in this sublever how addressable emission is calculated. Moreover, values of saving potential are unclear: replacing non-zero-emission source of energy with renewables should lead to saving potential of 100\% but in both global case and India the figure is 25\%. Finally, it is easy to spot some overlay with VPPs and integration of off-grid resources.\\
+
 \subsubsection{Sublever reconstruction\label{sec:irpg:reconstruction}}
+It was impossible to reconstruct this sublever as the addressable emission and saving potential are both unexplained and referred to unavailable source hence, no information whatsoever how abatement potential was constructed.\\
 
-In the US dirty power mix: 37\% coal with factor $\mathbf{0.67} \mathbf{kg}CO_2\mathbf{e} / kWh$\\
-
-
-
+To reconstruct the abatement potential we multiply $addressableEmission$ by $savingPotential$.
+\begin{gather*}
+  abatementPotential = addressableEmission *\\
+  \quad\quad\quad\quad\quad savingPotential
+\end{gather*}
+The results of reconstruction are presented in \emph{table}~\ref{tab:irpg} below.
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{ p{.12\textwidth} | p{.05\textwidth} | p{.05\textwidth} | p{.05\textwidth} | p{.05\textwidth} | p{.05\textwidth} }
+       & Cn & US & De & In & ALL \\
+      \hline
+      SMARTer & 152.8 & 84.7 & 84.7 & 23.8 & 850 \\
+      SMer rec. & 152.8 & 84.7 & 84.7 & 23.8 & 850 \\
+      SMer text & 153 & 197 & 28.8 & 23.8 & Na
+    \end{tabular}
+    \caption{Integration of renewables in power generation abatement potential in $\mathbf{Mt}CO_2\mathbf{e}$ with 25 to 100 percent saving potential. \label{tab:irpg}}
+  \end{table}
+\end{center}
+The abatement potential in SMARTer were succesfully reconstructed with data given therein. The data for USA are significantly different for the table and the text and the abatement potential for Germany is wrongly placed in table (data for US) with more resonable figure of $\mathbf{28.8Mt}CO_2\mathbf{e}$ given in text.
 
 
 
@@ -363,7 +395,7 @@ The calculations of abatement potential are based on same assumptions as in gene
 In the US the abatement potential of this sublever is estimated in the text at $\mathbf{6} \mathbf{Mt}CO_2\mathbf{e}$ and in table at $\mathbf{6.3} \mathbf{Mt}CO_2\mathbf{e}$. This sublever is highly dependant on government regulations in the US and advanced power grid technology. Without government intervention: subsidiaries, incentives, people might not want to use VPPs.\\
 The calculations of abatement potential are based on same assumptions as in general case described in \emph{section}~\ref{sec:vpp:reconstruction} with estimated ``future'' power capacity of $5GW$, sourced from the same report as in general case. This power capacity leads to abatement potential estimate of $\mathbf{6.1} \mathbf{Mt}CO_2\mathbf{e}$ which is slightly different from value indicated in the report.\\
 
-In Germany the abatement potential mentioned in the text ($\mathbf{1.7} \mathbf{Mt}CO_2\mathbf{e}$) and presented in the table ($\mathbf{6.3} \mathbf{Mt}CO_2\mathbf{e}$) are significantly different. This inconsistency is suspicious as it is not caused with rounding error. To this end, advanced grid infrastructure is required (currently not available in Germany). Furthermore emission reduction from this sublever may not be as significant as in other countries as power mix in Germany is relatively low emission.\\
+In Germany the abatement potential mentioned in the text ($\mathbf{1.7} \mathbf{Mt}CO_2\mathbf{e}$) and presented in the table ($\mathbf{6.3} \mathbf{Mt}CO_2\mathbf{e}$) are significantly different due to aforementioned copy-paste mistake. This inconsistency is suspicious as it is not caused with rounding error. To this end, advanced grid infrastructure is required (currently not available in Germany). Furthermore emission reduction from this sublever may not be as significant as in other countries as power mix in Germany is relatively low emission.\\
 The calculations of abatement potential are based on same assumptions as in general case described in \emph{section}~\ref{sec:vpp:reconstruction} with estimated ``future'' power capacity of $5GW$, sourced from the same report as in general case. This power capacity leads to abatement potential estimate of $\mathbf{6.1} \mathbf{Mt}CO_2\mathbf{e}$ which is slightly different from value indicated in the table and significantly different form the value indicated in the text.\\
 
 In India analysis this sublever is not mentioned and is not present in the corresponding figure~83. Also the corresponding table shows $\mathbf{0} \mathbf{Mt}CO_2\mathbf{e}$ abatement potential and justifies it with little technical potential for VPPs in India based on expert interviews.
